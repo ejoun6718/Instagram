@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import pars
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configuration.applicationId = "Instagram"
         configuration.clientKey = "kj3fu2tfq8hiuwekhfjo8b23q9ohushj[]9ujf2kllfj8"
         configuration.server = "https://instagram.herokuapp.com"
-      })
+      }))
     
     return true
   }
