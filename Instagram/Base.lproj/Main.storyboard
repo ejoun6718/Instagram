@@ -46,6 +46,7 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXS-i9-QEz"/>
+                                    <segue destination="BI2-x9-rDi" kind="presentation" identifier="loginSegue" id="wnP-UN-54c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,6 +61,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="101.19940029985008"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jWE-md-7zM">
+            <objects>
+                <viewController id="BI2-x9-rDi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KKf-zN-VgD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Yqx-qx-eRM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3O2-HK-cBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="101"/>
         </scene>
     </scenes>
 </document>
