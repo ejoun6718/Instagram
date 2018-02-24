@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         if let error = error {
           print("User log in failed: \(error.localizedDescription)")
           let title = "Sign In Failed"
-          let message = "You entered a wrong username or password"
+          let message = "Wrong username or password"
           self.showError(title: title, message: message)
         } else {
           print("User logged in successfully")
@@ -36,7 +36,6 @@ class LoginViewController: UIViewController {
   
   @IBAction func onSignUp(_ sender: Any) {
     let newUser = PFUser()
-    
     newUser.username = usernameField.text
     newUser.password = passwordField.text
     if(check()) {

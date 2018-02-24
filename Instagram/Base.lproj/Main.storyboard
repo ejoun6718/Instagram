@@ -46,7 +46,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXS-i9-QEz"/>
-                                    <segue destination="BI2-x9-rDi" kind="presentation" identifier="loginSegue" id="wnP-UN-54c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,6 +55,7 @@
                     <connections>
                         <outlet property="passwordField" destination="8R4-NV-bZD" id="RhZ-Yb-AdK"/>
                         <outlet property="usernameField" destination="czC-nK-IjS" id="oUu-YY-BYY"/>
+                        <segue destination="BI2-x9-rDi" kind="presentation" identifier="loginSegue" id="XIh-el-bVj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

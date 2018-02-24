@@ -18,12 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
-    Parse.initialize(
-      with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
-        configuration.applicationId = "Instagram"
-        configuration.clientKey = "kj3fu2tfq8hiuwekhfjo8b23q9ohushj[]9ujf2kllfj8"
-        configuration.server = "https://instagram.herokuapp.com"
-      }))
+    Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
+      configuration.applicationId = "Codepath-Parse-Test"
+      configuration.server = "http://testparsecodepath.herokuapp.com/parse"
+    }))
     
     return true
   }
