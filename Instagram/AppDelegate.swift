@@ -23,6 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       configuration.server = "http://testparsecodepath.herokuapp.com/parse"
     }))
     
+    // check if user is logged in.
+    if let currentUser = PFUser.current() {
+      print("Welcome back \(currentUser.username!) 😀")
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+      window?.rootViewController = homeViewController
+    }
+    
     return true
   }
 
