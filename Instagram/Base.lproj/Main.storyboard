@@ -105,7 +105,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="oHY-QV-Vnc">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gYS-H3-AxO" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" automaticallyAdjustsScrollViewInsets="NO" id="gYS-H3-AxO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nLa-HM-uXb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -140,7 +140,7 @@
         <!--Camera-->
         <scene sceneID="Uq0-Iz-gZE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QnZ-mH-q4l" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="QnZ-mH-q4l" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Camera" image="insta_camera_btn" id="Bme-4b-oFy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pjx-Nf-8zo">
