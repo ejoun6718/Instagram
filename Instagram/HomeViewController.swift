@@ -21,8 +21,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     // Do any additional setup after loading the view.
     tableView.dataSource = self
     //tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 50
-    Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.refresh), userInfo: nil, repeats: true)
+    tableView.rowHeight = 400
+    
+    let refreshControl = UIRefreshControl()
+    refreshControlAction(refreshControl)
+    refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+    // add refresh control to table view
+    tableView.insertSubview(refreshControl, at: 0)
   }
   
   override func didReceiveMemoryWarning() {
@@ -58,7 +63,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     return cell
   }
   
-  @objc func refresh() {
+  @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
     let query = PFQuery(className: "Post")
     query.addDescendingOrder("createdAt")
      
@@ -71,5 +76,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         print (error?.localizedDescription ?? "Error fetching messages")
       }
     })
+    refreshControl.endRefreshing()
   }
 }
