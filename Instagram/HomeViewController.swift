@@ -60,6 +60,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
       cell.usernameLabel.text = "🤖"
     }
     
+    if let caption = posts[indexPath.row]["caption"] as? String {
+      cell.captionLabel.text = caption
+    }
+    
     return cell
   }
   
