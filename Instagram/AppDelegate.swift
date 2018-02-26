@@ -19,17 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
-      configuration.applicationId = "Codepath-Parse-Test"
-      configuration.server = "http://testparsecodepath.herokuapp.com/parse"
+      configuration.applicationId = "Instagram"
+      configuration.clientKey = "dhsfjak"
+      configuration.server = "http://ancient-taiga-55814.herokuapp.com/parse"
     }))
-    
-    // check if user is logged in.
-    /*if let currentUser = PFUser.current() {
-     print("Welcome back \(currentUser.username!) 😀")
-     let storyboard = UIStoryboard(name: "NavigationController", bundle: nil)
-     let navigationController = storyboard.instantiateViewController(withIdentifier: "NavigationController")
-     window?.rootViewController = navigationController*/
-    
+
     if let currentUser = PFUser.current() {
       print("Welcome back \(currentUser.username!) 😀")
       

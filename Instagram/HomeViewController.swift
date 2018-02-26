@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     // Do any additional setup after loading the view.
     tableView.dataSource = self
-    tableView.rowHeight = UITableViewAutomaticDimension
+    //tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 50
     Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.refresh), userInfo: nil, repeats: true)
   }
@@ -38,9 +38,14 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
     cell.selectionStyle = .none
     
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    //cell.photoImageView.set
-      //= messages[indexPath.row]["text"] as? String
+    if let photo = posts[indexPath.row]["media"] as? PFFile {
+      photo.getDataInBackground({ (imageData: Data?, error: Error?) -> Void in
+        let image = UIImage(data: imageData!)
+        if image != nil {
+          cell.photoImageView.image = image
+        }
+      })
+    }
     
     if let user = posts[indexPath.row]["user"] as? PFUser {
       // User found! update username label with username
@@ -55,10 +60,9 @@ class HomeViewController: UIViewController, UITableViewDataSource {
   
   @objc func refresh() {
     let query = PFQuery(className: "Post")
-    //query.includeKey("user")
     query.addDescendingOrder("createdAt")
-    
-    query.findObjectsInBackground (block: { (postdata: [PFObject]?, error: Error?) -> Void in
+     
+     query.findObjectsInBackground (block: { (postdata: [PFObject]?, error: Error?) -> Void in
       if let postdata = postdata {
         self.posts = postdata
         self.tableView.reloadData()
