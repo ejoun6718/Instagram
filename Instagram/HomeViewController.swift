@@ -77,4 +77,23 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     })
     refreshControl.endRefreshing()
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let cell = sender as! UITableViewCell
+    // Get the index path from the cell that was tapped
+    if let indexPath = tableView.indexPath(for: cell) {
+      let detailViewController = segue.destination as! DetailViewController
+      if let caption = posts[indexPath.row]["caption"] as? String {
+        detailViewController.captionLabel.text = caption
+      }
+      if let photo = posts[indexPath.row]["media"] as? PFFile {
+        photo.getDataInBackground({ (imageData: Data?, error: Error?) -> Void in
+          let image = UIImage(data: imageData!)
+          if image != nil {
+            detailViewController.photoImageView.image = image
+          }
+        })
+      }
+    }
+  }
 }
