@@ -38,9 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.logOut()
       // TODO: Load and show the login view controller
     }
-    NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
-    
-    
     return true
   }
   

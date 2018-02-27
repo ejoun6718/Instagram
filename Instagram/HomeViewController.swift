@@ -11,6 +11,9 @@ import Parse
 
 class HomeViewController: UIViewController, UITableViewDataSource {
   
+  @IBAction func onSignOut(_ sender: Any) {
+    NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+  }
   @IBOutlet weak var tableView: UITableView!
   
   var posts = [PFObject]()

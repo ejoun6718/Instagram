@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18F66EF8A0452F517D7CE34F /* Pods_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2426C6C2334E037C4482F0A2 /* Pods_InstagramUITests.framework */; };
 		2024D462203CF32F00DA5476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024D461203CF32F00DA5476 /* AppDelegate.swift */; };
-		2024D464203CF32F00DA5476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024D463203CF32F00DA5476 /* ViewController.swift */; };
 		2024D467203CF32F00DA5476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2024D465203CF32F00DA5476 /* Main.storyboard */; };
 		2024D469203CF32F00DA5476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2024D468203CF32F00DA5476 /* Assets.xcassets */; };
 		2024D46C203CF32F00DA5476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2024D46A203CF32F00DA5476 /* LaunchScreen.storyboard */; };
@@ -46,7 +45,6 @@
 		0A669AFDF81D1F54103DB6AD /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		2024D45E203CF32F00DA5476 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2024D461203CF32F00DA5476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2024D463203CF32F00DA5476 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2024D466203CF32F00DA5476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2024D468203CF32F00DA5476 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2024D46B203CF32F00DA5476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				2024D461203CF32F00DA5476 /* AppDelegate.swift */,
-				2024D463203CF32F00DA5476 /* ViewController.swift */,
 				2024D465203CF32F00DA5476 /* Main.storyboard */,
 				2024D468203CF32F00DA5476 /* Assets.xcassets */,
 				2024D46A203CF32F00DA5476 /* LaunchScreen.storyboard */,
@@ -490,7 +487,6 @@
 				202CD82B20440DFE0028707A /* PostCell.swift in Sources */,
 				202CD825204267860028707A /* PhotoMapViewController.swift in Sources */,
 				2054B85B203CFECA005087E6 /* LoginViewController.swift in Sources */,
-				2024D464203CF32F00DA5476 /* ViewController.swift in Sources */,
 				202CD829204407A80028707A /* Post.swift in Sources */,
 				2024D462203CF32F00DA5476 /* AppDelegate.swift in Sources */,
 				20DB2AF32042603B00E8C58D /* HomeViewController.swift in Sources */,
