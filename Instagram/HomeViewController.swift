@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class HomeViewController: UIViewController, UITableViewDataSource {
-
+  
   @IBOutlet weak var tableView: UITableView!
   
   var posts = [PFObject]()
@@ -52,14 +52,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
       })
     }
     
-    if let user = posts[indexPath.row]["user"] as? PFUser {
-      // User found! update username label with username
-      cell.usernameLabel.text = user.username
-    } else {
-      // No user found, set default username
-      cell.usernameLabel.text = "🤖"
-    }
-    
     if let caption = posts[indexPath.row]["caption"] as? String {
       cell.captionLabel.text = caption
     }
@@ -70,8 +62,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
   @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
     let query = PFQuery(className: "Post")
     query.addDescendingOrder("createdAt")
-     
-     query.findObjectsInBackground (block: { (postdata: [PFObject]?, error: Error?) -> Void in
+    
+    query.findObjectsInBackground (block: { (postdata: [PFObject]?, error: Error?) -> Void in
       if let postdata = postdata {
         self.posts = postdata
         self.tableView.reloadData()

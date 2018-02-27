@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
       configuration.applicationId = "Instagram"
-      configuration.clientKey = "dhsfjak"
-      configuration.server = "http://ancient-taiga-55814.herokuapp.com/parse"
+      configuration.clientKey = "jfdskal"
+      configuration.server = "http://mysterious-caverns-81814.herokuapp.com/parse"
     }))
 
     if let currentUser = PFUser.current() {
@@ -31,6 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarController")
       window?.rootViewController = tabBarController
     }
+    
+    NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
+      print("Logout notification received")
+      // TODO: Logout the User
+      self.logOut()
+      // TODO: Load and show the login view controller
+    }
+    NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    
     
     return true
   }
@@ -57,6 +66,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
-
+  func logOut() {
+    // Logout the current user
+    PFUser.logOutInBackground(block: { (error) in
+      if let error = error {
+        print(error.localizedDescription)
+      } else {
+        print("Successful loggout")
+        // Load and show the login view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
+        self.window?.rootViewController = loginViewController
+      }
+    })
+  }
 }
-

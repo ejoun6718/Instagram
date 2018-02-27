@@ -11,21 +11,21 @@ import Parse
 
 class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
-
+  @IBOutlet weak var postImageView: UIImageView!
   @IBOutlet weak var captionField: UITextField!
   
   var editedImage : UIImage?
-    var window: UIWindow?
+  var window: UIWindow?
   
   @IBAction func onSubmit(_ sender: Any) {
     let caption = captionField.text
-    
     Post.postUserImage(image: editedImage, withCaption: caption, withCompletion: {(succeeded, error) -> Void in
       if succeeded {
         print("Successfully uploaded picture");
       } else {
         print("Error in uploading picture");
       }});
+    self.performSegue(withIdentifier: "postSegue", sender: nil)
   }
   
   override func viewDidLoad() {
@@ -57,9 +57,11 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
                              didFinishPickingMediaWithInfo info: [String : Any]) {
     // Get the image captured by the UIImagePickerController
     let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-    editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+    editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
     
     // Do something with the images (based on your use case)
+    postImageView.image = editedImage
+    captionField.becomeFirstResponder()
     
     // Dismiss UIImagePickerController to go back to your original view controller
     dismiss(animated: true, completion: nil)
