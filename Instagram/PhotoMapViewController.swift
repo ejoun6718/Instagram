@@ -19,7 +19,9 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
   
   @IBAction func onSubmit(_ sender: Any) {
     let caption = captionField.text
-    Post.postUserImage(image: editedImage, withCaption: caption, withCompletion: {(succeeded, error) -> Void in
+    let timestamp = String(Int(NSDate().timeIntervalSince1970))
+    print(timestamp)
+    Post.postUserImage(image: editedImage, withCaption: caption, withTime: timestamp, withCompletion: {(succeeded, error) -> Void in
       if succeeded {
         print("Successfully uploaded picture");
       } else {
@@ -39,13 +41,13 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     
     self.present(vc, animated: true, completion: nil)
     
-    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+    /*if UIImagePickerController.isSourceTypeAvailable(.camera) {
       print("Camera is available 📸")
       vc.sourceType = .camera
-    } else {
+    } else {*/
       print("Camera 🚫 available so we will use photo library instead")
       vc.sourceType = .photoLibrary
-    }
+    //}
   }
   
   override func didReceiveMemoryWarning() {

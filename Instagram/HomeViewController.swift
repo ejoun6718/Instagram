@@ -84,7 +84,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     if let indexPath = tableView.indexPath(for: cell) {
       let detailViewController = segue.destination as! DetailViewController
       if let caption = posts[indexPath.row]["caption"] as? String {
-        detailViewController.captionLabel.text = caption
+        detailViewController.captionLabelText = caption
+      }
+      if let timestamp = posts[indexPath.row]["timestamp"] as? String {
+        detailViewController.timestampLabelText = timestamp
       }
       if let photo = posts[indexPath.row]["media"] as? PFFile {
         photo.getDataInBackground({ (imageData: Data?, error: Error?) -> Void in

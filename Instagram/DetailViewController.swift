@@ -13,12 +13,16 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var photoImageView: UIImageView!
   @IBOutlet weak var timestampLabel: UILabel!
   @IBOutlet weak var captionLabel: UILabel!
+
+  var captionLabelText = ""
+  var timestampLabelText = ""
   
   override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    
+    captionLabel.text = captionLabelText
+    timestampLabel.text = timestampLabelText
   }
 
     override func didReceiveMemoryWarning() {
