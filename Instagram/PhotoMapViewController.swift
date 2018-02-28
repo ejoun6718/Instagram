@@ -41,12 +41,12 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     
     self.present(vc, animated: true, completion: nil)
     
-    /*if UIImagePickerController.isSourceTypeAvailable(.camera) {
-      print("Camera is available 📸")
-      vc.sourceType = .camera
-    } else {*/
-      print("Camera 🚫 available so we will use photo library instead")
-      vc.sourceType = .photoLibrary
+    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+     print("Camera is available 📸")
+     vc.sourceType = .camera
+     } else {
+    print("Camera 🚫 available so we will use photo library instead")
+    vc.sourceType = .photoLibrary
     //}
   }
   
