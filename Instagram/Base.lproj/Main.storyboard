@@ -81,18 +81,18 @@
                                 <rect key="frame" x="0.0" y="118" width="375" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="311" id="Uwo-cg-e1W" customClass="PostCell" customModule="Instagram" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="311" id="Uwo-cg-e1W" customClass="PostCell" customModule="Instagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="311"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uwo-cg-e1W" id="Dfg-vd-TAC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="310.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="310.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zCS-M6-V4T">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="273"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="273"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8i-SB-vcX">
-                                                    <rect key="frame" x="0.0" y="273.5" width="375" height="21"/>
+                                                    <rect key="frame" x="0.0" y="273.5" width="342" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                                         <connections>
                                             <outlet property="captionLabel" destination="Z8i-SB-vcX" id="FqX-T9-Bqg"/>
                                             <outlet property="photoImageView" destination="zCS-M6-V4T" id="uc1-5F-A8C"/>
-                                            <segue destination="djc-Ga-s0L" kind="showDetail" identifier="detailSegue" id="RJb-ls-akd"/>
+                                            <segue destination="djc-Ga-s0L" kind="push" id="NYv-x2-BnE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -175,6 +175,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wsg-Tq-RWG"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1NX-xJ-jqt"/>
                     <connections>
                         <outlet property="captionLabel" destination="toc-Qf-t2a" id="MD7-FT-0ft"/>
                         <outlet property="photoImageView" destination="MVG-oC-yy8" id="3Jw-ZH-xYG"/>
