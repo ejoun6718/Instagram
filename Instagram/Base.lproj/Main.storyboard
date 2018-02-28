@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Tf-xe-GmW">
-                                <rect key="frame" x="0.0" y="118" width="375" height="500"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="311" id="Uwo-cg-e1W" customClass="PostCell" customModule="Instagram" customModuleProvider="target">
@@ -89,7 +89,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zCS-M6-V4T">
-                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="273"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="273"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8i-SB-vcX">
                                                     <rect key="frame" x="0.0" y="273.5" width="342" height="21"/>
@@ -104,7 +104,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Z8i-SB-vcX" secondAttribute="trailing" id="dhg-5u-9S9"/>
                                                 <constraint firstItem="zCS-M6-V4T" firstAttribute="leading" secondItem="Dfg-vd-TAC" secondAttribute="leading" id="fUS-CF-81d"/>
                                                 <constraint firstAttribute="bottom" secondItem="Z8i-SB-vcX" secondAttribute="bottom" constant="16" id="lAa-aF-kMo"/>
-                                                <constraint firstAttribute="trailing" secondItem="zCS-M6-V4T" secondAttribute="trailing" id="n9t-oG-S4z"/>
+                                                <constraint firstAttribute="trailing" secondItem="zCS-M6-V4T" secondAttribute="trailing" constant="-34" id="n9t-oG-S4z"/>
                                                 <constraint firstItem="Z8i-SB-vcX" firstAttribute="top" secondItem="zCS-M6-V4T" secondAttribute="bottom" id="s9y-LH-a5T"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -116,26 +116,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVG-og-zBp">
-                                <rect key="frame" x="307" y="80" width="60" height="30"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="onSignOut:" destination="BI2-x9-rDi" eventType="touchUpInside" id="HTQ-xS-6CP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Tf-xe-GmW" firstAttribute="bottom" secondItem="Yqx-qx-eRM" secondAttribute="bottom" id="2B6-pg-IG7"/>
-                            <constraint firstItem="9Tf-xe-GmW" firstAttribute="top" secondItem="lVG-og-zBp" secondAttribute="bottom" constant="8" id="BvF-Nz-mjV"/>
                             <constraint firstItem="9Tf-xe-GmW" firstAttribute="leading" secondItem="Yqx-qx-eRM" secondAttribute="leading" id="F37-DV-uZx"/>
-                            <constraint firstItem="Yqx-qx-eRM" firstAttribute="trailing" secondItem="lVG-og-zBp" secondAttribute="trailing" constant="8" id="WLg-et-4pr"/>
+                            <constraint firstItem="9Tf-xe-GmW" firstAttribute="top" secondItem="Yqx-qx-eRM" secondAttribute="top" id="HMI-o2-2Xq"/>
                             <constraint firstItem="9Tf-xe-GmW" firstAttribute="trailing" secondItem="Yqx-qx-eRM" secondAttribute="trailing" id="kS5-Z9-hri"/>
-                            <constraint firstItem="lVG-og-zBp" firstAttribute="top" secondItem="Yqx-qx-eRM" secondAttribute="top" constant="16" id="yJt-X4-FbK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yqx-qx-eRM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WyD-64-vRD"/>
+                    <navigationItem key="navigationItem" id="WyD-64-vRD">
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="tHp-T3-wj9">
+                            <connections>
+                                <action selector="onSignOut:" destination="BI2-x9-rDi" id="XXm-iS-SJ6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9Tf-xe-GmW" id="69k-ww-dfc"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutSegue" id="MSM-7y-x0h"/>
@@ -143,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3O2-HK-cBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="25"/>
+            <point key="canvasLocation" x="1637.5999999999999" y="24.7376311844078"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="94D-H8-YI7">
@@ -153,26 +150,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toc-Qf-t2a">
-                                <rect key="frame" x="0.0" y="323" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toc-Qf-t2a">
+                                <rect key="frame" x="0.0" y="366" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8V-xE-mwe">
-                                <rect key="frame" x="0.0" y="66" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8V-xE-mwe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-oC-yy8">
-                                <rect key="frame" x="0.0" y="352" width="375" height="273"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-oC-yy8">
+                                <rect key="frame" x="0.0" y="93" width="375" height="273"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="273" id="AUZ-fg-SF1"/>
+                                    <constraint firstAttribute="width" constant="375" id="GuR-9g-AdR"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MVG-oC-yy8" firstAttribute="trailing" secondItem="wsg-Tq-RWG" secondAttribute="trailing" id="E8n-pO-zdw"/>
+                            <constraint firstItem="l8V-xE-mwe" firstAttribute="trailing" secondItem="wsg-Tq-RWG" secondAttribute="trailing" id="EFs-Vd-p3M"/>
+                            <constraint firstItem="toc-Qf-t2a" firstAttribute="trailing" secondItem="wsg-Tq-RWG" secondAttribute="trailing" id="KFj-CG-Q65"/>
+                            <constraint firstItem="MVG-oC-yy8" firstAttribute="top" secondItem="l8V-xE-mwe" secondAttribute="bottom" constant="8" id="SaA-5p-oo5"/>
+                            <constraint firstItem="toc-Qf-t2a" firstAttribute="leading" secondItem="wsg-Tq-RWG" secondAttribute="leading" id="Tpf-vu-xjz"/>
+                            <constraint firstItem="toc-Qf-t2a" firstAttribute="top" secondItem="MVG-oC-yy8" secondAttribute="bottom" id="YTT-88-DXl"/>
+                            <constraint firstItem="MVG-oC-yy8" firstAttribute="leading" secondItem="wsg-Tq-RWG" secondAttribute="leading" id="bdN-pC-17D"/>
+                            <constraint firstItem="l8V-xE-mwe" firstAttribute="leading" secondItem="wsg-Tq-RWG" secondAttribute="leading" id="kzc-pK-kjB"/>
+                            <constraint firstItem="l8V-xE-mwe" firstAttribute="top" secondItem="wsg-Tq-RWG" secondAttribute="top" id="mc7-Pg-jFL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wsg-Tq-RWG"/>
                     </view>
                     <navigationItem key="navigationItem" id="1NX-xJ-jqt"/>
@@ -303,7 +312,6 @@
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H3B-NI-LXr"/>
         <segue reference="4Vf-Ab-34h"/>
     </inferredMetricsTieBreakers>
 </document>

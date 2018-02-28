@@ -33,9 +33,18 @@ class Post: PFObject, PFSubclassing {
    - parameter caption: Caption text input by the user
    - parameter completion: Block to be executed after save operation is complete
    */
-  class func postUserImage(image: UIImage?, withCaption caption: String?, withTime time: String, withCompletion completion: PFBooleanResultBlock?) {
+  class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
     // use subclass approach
     let post = Post()
+    
+    let formatter = DateFormatter()
+    // initially set the format based on your datepicker date
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    
+    let dateString = formatter.string(from: Date())
+    let date = formatter.date(from: dateString)
+    formatter.dateFormat = "dd-MMM-yyyy"
+    let time = formatter.string(from: date!)
     
     // Add relevant fields to the object
     post.media = getPFFileFromImage(image: image)! // PFFile column type

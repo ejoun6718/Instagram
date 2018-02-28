@@ -21,7 +21,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     let caption = captionField.text
     let timestamp = String(Int(NSDate().timeIntervalSince1970))
     print(timestamp)
-    Post.postUserImage(image: editedImage, withCaption: caption, withTime: timestamp, withCompletion: {(succeeded, error) -> Void in
+    Post.postUserImage(image: editedImage, withCaption: caption, withCompletion: {(succeeded, error) -> Void in
       if succeeded {
         print("Successfully uploaded picture");
       } else {
